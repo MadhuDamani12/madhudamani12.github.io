@@ -24,33 +24,29 @@ nav.scrolled{background:rgba(249,246,241,0.96);backdrop-filter:blur(16px);border
 .nav-links a:hover,.nav-links a.active{color:var(--ink);}
 
 /* HERO — full window split */
+
 .hero{
   height:100vh;
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:1fr 1.2fr;
   overflow:hidden;
 }
-
-
 .hero-photo-panel{
   position:relative;
   overflow:hidden;
   background:var(--cream);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:6rem 2rem 4rem;
 }
-
 .hero-photo-panel img{
-  width:45%;
-  height:85%;
+  width:75%;
+  max-height:70vh;
   object-fit:cover;
   object-position:center top;
-  border-radius:200px 200px 0 0;
-  position:absolute;
-  bottom:0;
-  left:50%;
-  transform:translateX(-50%);
-  box-shadow:none;
+  border-radius:160px 160px 0 0;
 }
-
 .hero-text-panel{
   display:flex;flex-direction:column;justify-content:center;
   padding:0 7% 0 6%;
@@ -62,6 +58,7 @@ nav.scrolled{background:rgba(249,246,241,0.96);backdrop-filter:blur(16px);border
   background:radial-gradient(ellipse 80% 60% at 0% 100%,rgba(196,152,90,0.08) 0%,transparent 70%);
   pointer-events:none;
 }
+
 .hero-eyebrow{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent2);margin-bottom:1.8rem;display:flex;align-items:center;gap:1rem;}
 .hero-eyebrow::before{content:'';width:2rem;height:1px;background:var(--accent2);}
 .hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(4rem,6vw,6.5rem);font-weight:300;line-height:1;margin-bottom:1.8rem;letter-spacing:-.01em;}
