@@ -14,7 +14,7 @@
 }
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;}
-
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 5%;transition:background .4s,border-color .4s;border-bottom:1px solid transparent;}
 nav.scrolled{background:rgba(249,246,241,0.96);backdrop-filter:blur(16px);border-color:var(--line);}
@@ -245,7 +245,7 @@ footer p{font-size:.62rem;color:rgba(249,246,241,.25);letter-spacing:.05em;}
     <p class="hero-tagline">
       I don't just work with data —<br>
       <strong>I make data work for you.</strong><br>
-      Analyst · Strategist · Builder · MSBA '26
+      <span id="typing-text">Analyst.</span><span style="color:var(--accent2);animation:blink 1s infinite;">|</span>
     </p>
     <div class="hero-btns">
       <a href="#projects" class="btn btn-solid">View My Work →</a>
@@ -425,17 +425,76 @@ footer p{font-size:.62rem;color:rgba(249,246,241,.25);letter-spacing:.05em;}
 </footer>
 
 <script>
+// Nav scroll
 window.addEventListener('scroll',()=>{ document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40); });
+
+// Lightbox
 function openLb(src){ document.getElementById('lb-img').src=src; document.getElementById('lb').classList.add('open'); document.body.style.overflow='hidden'; }
 function closeLb(){ document.getElementById('lb').classList.remove('open'); document.body.style.overflow=''; }
 document.getElementById('lb').addEventListener('click',function(e){ if(e.target===this) closeLb(); });
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLb(); });
+
+// Active nav
 const secs=[...document.querySelectorAll('section[id]')];
 window.addEventListener('scroll',()=>{
   const pos=window.scrollY+100; let cur='';
   secs.forEach(s=>{ if(s.offsetTop<=pos) cur=s.id; });
   document.querySelectorAll('.nav-links a').forEach(a=>{ a.classList.toggle('active',a.getAttribute('href')==='#'+cur); });
 });
+
+// A — Scroll fade-in
+const fadeEls = document.querySelectorAll('section, .pcard, .acard, .ccard, .titem');
+const fadeObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, {threshold: 0.08});
+fadeEls.forEach((el, i) => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = `opacity 0.7s ease ${i * 0.04}s, transform 0.7s ease ${i * 0.04}s`;
+  fadeObs.observe(el);
+});
+
+// B — Typing effect
+const phrases = ['Analyst.', 'Strategist.', 'Builder.', 'MSBA \'26.'];
+const typingEl = document.getElementById('typing-text');
+let pi = 0, ci = 0, deleting = false;
+function type() {
+  const current = phrases[pi];
+  if(!deleting) {
+    typingEl.textContent = current.slice(0, ci + 1);
+    ci++;
+    if(ci === current.length){ deleting = true; setTimeout(type, 1400); return; }
+  } else {
+    typingEl.textContent = current.slice(0, ci - 1);
+    ci--;
+    if(ci === 0){ deleting = false; pi = (pi + 1) % phrases.length; }
+  }
+  setTimeout(type, deleting ? 60 : 100);
+}
+if(typingEl) type();
+
+// F — Card tilt on hover
+document.querySelectorAll('.pcard:not(.pcard-soon)').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = e.clientX - r.left - r.width/2;
+    const y = e.clientY - r.top - r.height/2;
+    card.style.transform = `perspective(600px) rotateX(${-y/20}deg) rotateY(${x/20}deg) scale(1.02)`;
+    card.style.transition = 'transform 0.1s ease';
+    card.style.zIndex = '2';
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(600px) rotateX(0) rotateY(0) scale(1)';
+    card.style.transition = 'transform 0.4s ease';
+    card.style.zIndex = '';
+  });
+});
 </script>
+  
 </body>
 </html>
