@@ -36,11 +36,10 @@ button{font:inherit}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 0;border-bottom:1px solid transparent;transition:.35s}
 .nav.scrolled{background:rgba(23,18,29,.86);backdrop-filter:blur(18px);border-color:rgba(255,255,255,.08)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem}
-.mark{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:600;letter-spacing:.08em;text-decoration:none;color:var(--gold)}
-.nav-links{display:flex;align-items:center;gap:1.6rem;list-style:none}
+.nav-links{display:flex;align-items:center;gap:1.6rem;list-style:none;margin-left:auto}
 .nav-links a{text-decoration:none;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(251,248,243,.62);transition:.25s}
 .nav-links a:hover,.nav-links a.active{color:var(--white)}
-.menu-btn{display:none;border:0;background:none;color:var(--white);width:44px;height:44px;position:relative}
+.menu-btn{display:none;border:0;background:none;color:var(--white);width:44px;height:44px;position:relative;margin-left:auto}
 .menu-btn span,.menu-btn::before,.menu-btn::after{content:'';position:absolute;left:11px;width:22px;height:1px;background:currentColor;transition:.3s}
 .menu-btn span{top:22px}.menu-btn::before{top:15px}.menu-btn::after{top:29px}
 .menu-btn.open span{opacity:0}.menu-btn.open::before{top:22px;transform:rotate(45deg)}.menu-btn.open::after{top:22px;transform:rotate(-45deg)}
@@ -239,7 +238,6 @@ img{display:block;max-width:100%}
 
 .nav{padding:.9rem 0;color:var(--ink)}
 .nav.scrolled{background:rgba(245,240,232,.9);border-color:var(--darkline)}
-.mark{color:var(--ink);font-size:1.35rem}
 .nav-links{gap:1.45rem}
 .nav-links a{color:rgba(37,33,30,.62);font-size:.65rem}
 .nav-links a:hover,.nav-links a.active{color:var(--ink)}
@@ -763,7 +761,6 @@ main>section:not(.hero) .section-title{font-size:clamp(2.55rem,3.7vw,4rem);max-w
 <div class="progress" id="progress"></div>
 <nav class="nav" id="nav">
   <div class="shell nav-inner">
-    <a class="mark" href="#home" aria-label="Madhu Damani home">MD.</a>
     <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false"><span></span></button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#career">Career</a></li>
@@ -868,10 +865,10 @@ main>section:not(.hero) .section-title{font-size:clamp(2.55rem,3.7vw,4rem);max-w
           <div class="project-tag">Forecasting · External Indicators · ETL</div><h3 class="project-title">Revenue Forecasting &amp; Scenario Analysis</h3><p class="project-desc">Identified a material forecast gap, quantified its revenue impact, and improved planning accuracy.</p>
           <div class="project-actions"><button type="button" class="project-quick" data-project-id="forecast">Quick view</button><span class="project-link">Industry capstone</span></div>
         </article>
-        <article class="project-card reveal" data-category="ai">
+        <article class="project-card reveal" data-category="analytics bi">
           <div class="project-num">09</div>
-          <div class="project-tag">RAG · Azure OpenAI · Streamlit</div><h3 class="project-title">Stripe Support RAG Assistant</h3><p class="project-desc">Designed a cited support assistant with retrieval, confidence-based escalation, and response guardrails.</p>
-          <div class="project-actions"><button type="button" class="project-quick" data-project-id="stripe-rag">Quick view</button><a class="project-link" href="https://github.com/DRJohnson21/Stripe-Customer-Support-RAG-Bot" target="_blank" rel="noopener">GitHub →</a></div>
+          <div class="project-tag">Snowflake · dbt · Tableau</div><h3 class="project-title">Supplier Risk &amp; Procurement Analytics</h3><p class="project-desc">Built a tested warehouse-to-dashboard pipeline that surfaces supplier delivery, quality, spend, and open-order risk.</p>
+          <div class="project-actions"><button type="button" class="project-quick" data-project-id="supplier-risk">Quick view</button><a class="project-link" href="https://github.com/MadhuDamani12/snowflake-dbt-supply-chain-analytics" target="_blank" rel="noopener">GitHub →</a></div>
         </article>
       </div>
     </div>
@@ -1116,13 +1113,13 @@ const projectDetails={
     decision:'Improved planning accuracy and strategic decision-making.',
     link:''
   },
-  'stripe-rag':{
-    tag:'RAG · Azure OpenAI · Streamlit',title:'Stripe Support RAG Assistant',
-    desc:'Designed a cited support assistant with retrieval, confidence-based escalation, and response guardrails.',
-    question:'How can support answers remain accurate, cited, and safely escalated?',
-    method:'Retrieval-augmented generation, confidence controls, and guardrails.',
-    decision:'Dependable self-service support with clear escalation paths.',
-    link:'https://github.com/DRJohnson21/Stripe-Customer-Support-RAG-Bot'
+  'supplier-risk':{
+    tag:'Snowflake · dbt · Tableau',title:'Supplier Risk & Procurement Analytics',
+    desc:'Built a tested warehouse-to-dashboard pipeline that surfaces supplier delivery, quality, spend, and open-order risk.',
+    question:'Which suppliers create the greatest delivery, quality, and open-order exposure?',
+    method:'Snowflake warehousing, layered dbt models, automated data-quality tests, and Tableau.',
+    decision:'Prioritized supplier management using consistent procurement KPIs and risk indicators.',
+    link:'https://github.com/MadhuDamani12/snowflake-dbt-supply-chain-analytics'
   }
 };
 const projectDialog=document.getElementById('projectDialog');
