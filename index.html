@@ -109,7 +109,7 @@ button{font:inherit}
 .milestone-period{font-size:.55rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
 .milestone-role{font-family:'Cormorant Garamond',serif;font-size:1.2rem;line-height:1.15;margin-bottom:.5rem;overflow-wrap:anywhere}
 .milestone-company{font-size:.66rem;color:var(--muted);line-height:1.5}
-.milestone-now{display:inline-block;margin-top:.8rem;padding:.25rem .55rem;border-radius:99px;background:var(--coral);color:var(--plum);font-size:.5rem;letter-spacing:.12em;text-transform:uppercase}
+.milestone-now{display:inline-block;align-self:flex-start;margin-top:.8rem;padding:.25rem .55rem;border-radius:99px;background:var(--coral);color:var(--plum);font-size:.5rem;letter-spacing:.12em;text-transform:uppercase}
 
 /* Projects */
 .projects-head{display:flex;align-items:end;justify-content:space-between;gap:2rem;margin-bottom:2.5rem}
@@ -562,7 +562,8 @@ main>section:not(.hero) .section-title{font-size:clamp(2.55rem,3.7vw,4rem);max-w
 .contact{padding:5.5rem 0}
 @media(min-width:861px){
   .roadmap{min-height:245px}
-  .milestone-card,.milestone:nth-child(odd) .milestone-card,.milestone:nth-child(even) .milestone-card{margin-top:62px;min-height:128px}
+  .milestone-card,.milestone:nth-child(odd) .milestone-card,.milestone:nth-child(even) .milestone-card{margin-top:62px;min-height:180px}
+  .milestone-now{position:absolute;top:1rem;right:1rem;margin-top:0}
   .roadmap::before,.roadmap::after{top:22px}
   .milestone-dot{top:14px}
 }
@@ -825,50 +826,50 @@ main>section:not(.hero) .section-title{font-size:clamp(2.55rem,3.7vw,4rem);max-w
         <a class="projects-github" href="https://github.com/MadhuDamani12?tab=repositories" target="_blank" rel="noopener">View all projects on GitHub →</a>
       </div>
       <div class="project-grid">
-        <article class="project-card reveal" data-category="analytics strategy">
-          <div class="project-num">01</div>
-          <div class="project-tag">Causal Inference · R</div><h3 class="project-title">Measuring True ROI on Search Ads</h3><p class="project-desc">Separated incremental ad-driven demand from organic behavior to reveal the true economics of branded search.</p>
-          <div class="project-actions"><button type="button" class="project-quick" data-project-id="search-ads">Quick view</button><a class="project-link" href="https://github.com/MadhuDamani12/Causal-Analysis-DiD-Search-Ads" target="_blank" rel="noopener">GitHub →</a></div>
-        </article>
-        <article class="project-card reveal" data-category="analytics ai">
-          <div class="project-num">02</div>
-          <div class="project-tag">Customer Analytics · Python · ML</div><h3 class="project-title">Santander Customer Retention</h3><p class="project-desc">Built a churn-risk scoring system for a highly imbalanced customer dataset using leak-free model evaluation.</p>
-          <div class="project-actions"><button type="button" class="project-quick" data-project-id="santander">Quick view</button><a class="project-link" href="https://github.com/MadhuDamani12/customer-retention-santander-bank" target="_blank" rel="noopener">GitHub →</a></div>
-        </article>
-        <article class="project-card reveal" data-category="ai bi">
-          <div class="project-num">03</div>
-          <div class="project-tag">Computer Vision · Databricks · ArcGIS</div><h3 class="project-title">PotholeVision</h3><p class="project-desc">Automated road-damage detection and geo-mapping to support infrastructure repair decisions.</p>
-          <div class="project-actions"><button type="button" class="project-quick" data-project-id="pothole">Quick view</button><a class="project-link" href="https://github.com/MadhuDamani12/PotholeVision" target="_blank" rel="noopener">GitHub →</a></div>
-        </article>
-        <article class="project-card reveal" data-category="analytics strategy">
-          <div class="project-num">04</div>
-          <div class="project-tag">Experimentation · Regression · R</div><h3 class="project-title">Star Digital Ad Effectiveness</h3><p class="project-desc">Measured incremental conversion lift, diminishing returns, and placement efficiency to improve advertising allocation.</p>
-          <div class="project-actions"><button type="button" class="project-quick" data-project-id="star-ads">Quick view</button><a class="project-link" href="https://github.com/MadhuDamani12/Web-Ad-Strategy-Experimentation" target="_blank" rel="noopener">GitHub →</a></div>
-        </article>
-        <article class="project-card reveal" data-category="analytics ai">
-          <div class="project-num">05</div>
-          <div class="project-tag">SQL · LLM · Streamlit</div><h3 class="project-title">Text-to-SQL Analytics App</h3><p class="project-desc">Turned natural-language business questions into validated SQL over uploaded datasets.</p>
-          <div class="project-actions"><button type="button" class="project-quick" data-project-id="text-sql">Quick view</button><a class="project-link" href="https://github.com/MadhuDamani12/Text-to-SQL-App" target="_blank" rel="noopener">GitHub →</a></div>
-        </article>
-        <article class="project-card reveal" data-category="strategy">
-          <div class="project-num">06</div>
-          <div class="project-tag">Brand Strategy · National Finalist</div><h3 class="project-title">Croc Tears: Crocs Campaign</h3><p class="project-desc">Translated audience insight into a digital-first campaign concept selected as a national top-ten finalist.</p>
-          <div class="project-actions"><button type="button" class="project-quick" data-project-id="crocs">Quick view</button><a class="project-link" href="https://github.com/MadhuDamani12/CrocsxGCA-Competition-CrocTears-Campaign" target="_blank" rel="noopener">GitHub →</a></div>
-        </article>
-        <article class="project-card reveal" data-category="ai analytics">
-          <div class="project-num">07</div>
-          <div class="project-tag">NLP · DistilBERT · Python</div><h3 class="project-title">FinSignal IQ</h3><p class="project-desc">Fine-tuned a finance-content classifier with human-reviewed labels, class weighting, and failure analysis.</p>
-          <div class="project-actions"><button type="button" class="project-quick" data-project-id="finsignal">Quick view</button><a class="project-link" href="https://github.com/MadhuDamani12/FinSignal-IQ" target="_blank" rel="noopener">GitHub →</a></div>
-        </article>
         <article class="project-card reveal" data-category="analytics">
-          <div class="project-num">08</div>
+          <div class="project-num">01</div>
           <div class="project-tag">Forecasting · External Indicators · ETL</div><h3 class="project-title">Revenue Forecasting &amp; Scenario Analysis</h3><p class="project-desc">Identified a material forecast gap, quantified its revenue impact, and improved planning accuracy.</p>
           <div class="project-actions"><button type="button" class="project-quick" data-project-id="forecast">Quick view</button><span class="project-link">Industry capstone</span></div>
         </article>
         <article class="project-card reveal" data-category="analytics bi">
-          <div class="project-num">09</div>
+          <div class="project-num">02</div>
           <div class="project-tag">Snowflake · dbt · Tableau</div><h3 class="project-title">Supplier Risk &amp; Procurement Analytics</h3><p class="project-desc">Built a tested warehouse-to-dashboard pipeline that surfaces supplier delivery, quality, spend, and open-order risk.</p>
           <div class="project-actions"><button type="button" class="project-quick" data-project-id="supplier-risk">Quick view</button><a class="project-link" href="https://github.com/MadhuDamani12/snowflake-dbt-supply-chain-analytics" target="_blank" rel="noopener">GitHub →</a></div>
+        </article>
+        <article class="project-card reveal" data-category="analytics strategy">
+          <div class="project-num">03</div>
+          <div class="project-tag">Causal Inference · R</div><h3 class="project-title">Measuring True ROI on Search Ads</h3><p class="project-desc">Separated incremental ad-driven demand from organic behavior to reveal the true economics of branded search.</p>
+          <div class="project-actions"><button type="button" class="project-quick" data-project-id="search-ads">Quick view</button><a class="project-link" href="https://github.com/MadhuDamani12/Causal-Analysis-DiD-Search-Ads" target="_blank" rel="noopener">GitHub →</a></div>
+        </article>
+        <article class="project-card reveal" data-category="analytics ai">
+          <div class="project-num">04</div>
+          <div class="project-tag">Customer Analytics · Python · ML</div><h3 class="project-title">Santander Customer Retention</h3><p class="project-desc">Built a churn-risk scoring system for a highly imbalanced customer dataset using leak-free model evaluation.</p>
+          <div class="project-actions"><button type="button" class="project-quick" data-project-id="santander">Quick view</button><a class="project-link" href="https://github.com/MadhuDamani12/customer-retention-santander-bank" target="_blank" rel="noopener">GitHub →</a></div>
+        </article>
+        <article class="project-card reveal" data-category="analytics strategy">
+          <div class="project-num">05</div>
+          <div class="project-tag">Experimentation · Regression · R</div><h3 class="project-title">Star Digital Ad Effectiveness</h3><p class="project-desc">Measured incremental conversion lift, diminishing returns, and placement efficiency to improve advertising allocation.</p>
+          <div class="project-actions"><button type="button" class="project-quick" data-project-id="star-ads">Quick view</button><a class="project-link" href="https://github.com/MadhuDamani12/Web-Ad-Strategy-Experimentation" target="_blank" rel="noopener">GitHub →</a></div>
+        </article>
+        <article class="project-card reveal" data-category="analytics ai">
+          <div class="project-num">06</div>
+          <div class="project-tag">SQL · LLM · Streamlit</div><h3 class="project-title">Text-to-SQL Analytics App</h3><p class="project-desc">Turned natural-language business questions into validated SQL over uploaded datasets.</p>
+          <div class="project-actions"><button type="button" class="project-quick" data-project-id="text-sql">Quick view</button><a class="project-link" href="https://github.com/MadhuDamani12/Text-to-SQL-App" target="_blank" rel="noopener">GitHub →</a></div>
+        </article>
+        <article class="project-card reveal" data-category="ai bi">
+          <div class="project-num">07</div>
+          <div class="project-tag">Computer Vision · Databricks · ArcGIS</div><h3 class="project-title">PotholeVision</h3><p class="project-desc">Automated road-damage detection and geo-mapping to support infrastructure repair decisions.</p>
+          <div class="project-actions"><button type="button" class="project-quick" data-project-id="pothole">Quick view</button><a class="project-link" href="https://github.com/MadhuDamani12/PotholeVision" target="_blank" rel="noopener">GitHub →</a></div>
+        </article>
+        <article class="project-card reveal" data-category="strategy">
+          <div class="project-num">08</div>
+          <div class="project-tag">Brand Strategy · National Finalist</div><h3 class="project-title">Croc Tears: Crocs Campaign</h3><p class="project-desc">Translated audience insight into a digital-first campaign concept selected as a national top-ten finalist.</p>
+          <div class="project-actions"><button type="button" class="project-quick" data-project-id="crocs">Quick view</button><a class="project-link" href="https://github.com/MadhuDamani12/CrocsxGCA-Competition-CrocTears-Campaign" target="_blank" rel="noopener">GitHub →</a></div>
+        </article>
+        <article class="project-card reveal" data-category="ai analytics">
+          <div class="project-num">09</div>
+          <div class="project-tag">NLP · DistilBERT · Python</div><h3 class="project-title">FinSignal IQ</h3><p class="project-desc">Fine-tuned a finance-content classifier with human-reviewed labels, class weighting, and failure analysis.</p>
+          <div class="project-actions"><button type="button" class="project-quick" data-project-id="finsignal">Quick view</button><a class="project-link" href="https://github.com/MadhuDamani12/FinSignal-IQ" target="_blank" rel="noopener">GitHub →</a></div>
         </article>
       </div>
     </div>
